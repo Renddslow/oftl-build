@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const router = require('lieutenant');
 
 const createPost = require('./createPost');
