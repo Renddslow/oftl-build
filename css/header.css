@@ -1,0 +1,73 @@
+header.header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, max-content);
+    position: absolute;
+    background: transparent;
+    padding: 12px 48px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.2s ease-out;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+header.header a {
+    color: #bfbfbf;
+    text-decoration: none;
+    outline: none;
+}
+
+header.header a:focus,
+header.header a:hover {
+    color: #fff;
+}
+
+nav.navigation {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, max-content));
+    grid-gap: 16px;
+}
+
+a.logo-container {
+    height: 30px;
+    display: grid;
+    grid-template-columns: minmax(0, max-content) minmax(0, 1fr);
+    align-items: center;
+    grid-column-gap: 4px;
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+}
+
+a.logo-container:hover .logo-text,
+a.logo-container:focus .logo-text {
+    transform: translateX(0);
+}
+
+.logo-square {
+    background: tomato;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 100%;
+    display: grid;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo-text {
+    color: #fff;
+    transform: translateX(-200px);
+    transition: transform 0.2s ease-out;
+}
+
+@media screen and (max-width: 640px) {
+    header.header {
+        padding: 12px 24px;
+    }
+}

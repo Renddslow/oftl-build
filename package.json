@@ -1,7 +1,18 @@
 {
-  "name": "ontheformedlife-blog-template",
+  "name": "@otfl/build",
   "version": "0.0.0",
   "main": "index.js",
   "author": "Matt McElwee <mmcelwee@dmsi.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "front-matter": "^3.0.2",
+    "globby": "^10.0.1",
+    "lieutenant": "^1.1.0",
+    "marked": "^0.7.0",
+    "pretty": "^2.0.0",
+    "slugify": "^1.3.4",
+    "uglifycss": "^0.0.29",
+    "wcag-contrast": "^2.1.1"
+  }
 }
