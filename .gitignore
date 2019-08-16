@@ -1,3 +1,6 @@
 /node_modules
 yarn-error.log*
 test/
+
+# We use yarn for everything, but use npm link for testing global installs
+package-lock.json
