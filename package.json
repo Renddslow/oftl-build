@@ -15,7 +15,6 @@
     "wcag-contrast": "^2.1.1"
   },
   "bin": {
-    "@otfl/build": "index.js",
     "otfl-build": "index.js"
   }
 }
