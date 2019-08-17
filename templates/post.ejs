@@ -11,23 +11,25 @@
     <div class="post-content">
         <div class="post-meta">
             <div>
-                <p><%= post.date %></p>
-                <p>
-                    <a href="<%= post.author.link %>"><%= post.author.name %></a> in <a href="<%= post.category.link %>"><%= post.category.label %></a>
-                </p>
-                <p><%= post.readLength %></p>
-            </div>
-            <div class="tag-row">
-                <% for (let i in post.tags) { %>
+                <div>
+                    <p><%= post.date %></p>
+                    <p>
+                        <a href="<%= post.author.link %>"><%= post.author.name %></a> in <a href="<%= post.category.link %>"><%= post.category.label %></a>
+                    </p>
+                    <p><%= post.readLength %></p>
+                </div>
+                <div class="tag-row">
+                    <% for (let i in post.tags) { %>
                     <a href="<%= post.tags[i].link %>" style="background: <%= post.tags[i].bg %>; color: <%= post.tags[i].color %>; border-color: <%= post.tags[i].bg %>" class="tag">
                         <%= post.tags[i].label %>
                     </a>
-                <% } %>
+                    <% } %>
+                </div>
             </div>
             <div class="post-share-bar">
-                <a href="<%= post.social.email %>"><i class="fas fa-envelope"></i></a>
-                <a href="<%= post.social.twitter %>"><i class="fab fa-twitter"></i></a>
-                <a href="<%= post.social.facebook %>"><i class="fab fa-facebook-f"></i></a>
+                <a href="<%= post.social.email %>" aria-label="Send this review to someone via email"><i class="fas fa-envelope"></i></a>
+                <a href="<%= post.social.twitter %>" aria-label="Share this review on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="<%= post.social.facebook %>" aria-label="Share this review on Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>
         <div class="post-body">
