@@ -2,10 +2,12 @@
 
 const router = require('lieutenant');
 
+const createPage = require('./createPage');
 const createPost = require('./createPost');
 const compileCSS = require('./compileCSS');
 
 router({
-  post: createPost,
   css: compileCSS,
+  page: createPage,
+  post: createPost,
 });
