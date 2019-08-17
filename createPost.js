@@ -119,5 +119,5 @@ module.exports = async (srcDir, destDir, archiveDir) => {
     { title: 'Archives' },
   );
 
-  await write(archiveDirPath, document);
+  await write(path.join(archiveDirPath, 'archive.html'), document);
 };
