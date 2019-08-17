@@ -12,6 +12,7 @@ header.header {
     transition: background 0.2s ease-out;
     font-weight: 600;
     font-size: 14px;
+    align-items: center;
 }
 
 header.header a {
