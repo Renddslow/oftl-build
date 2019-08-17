@@ -42,7 +42,7 @@
     bottom: 0;
     width: 100%;
     left: 0;
-    display: grid;
+    display: flex;
     box-sizing: border-box;
     align-items: center;
 }
