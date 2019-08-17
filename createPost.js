@@ -18,6 +18,12 @@ marked.options({
   smartypants: true,
 });
 
+const fmt = new Intl.DateTimeFormat('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
+
 module.exports = async (srcDir, destDir) => {
   const srcDirPath = path.resolve(process.cwd(), srcDir);
   const destDirPath = path.resolve(process.cwd(), destDir);
@@ -65,7 +71,7 @@ module.exports = async (srcDir, destDir) => {
         name: attributes.author,
         link: `/authors/${getAuthorSlug(attributes.author)}`,
       },
-      date: attributes.date,
+      date: fmt.format(new Date(attributes.date)),
       title: attributes.title,
       permalink: slugify(attributes.title, {
         replacement: '-',
