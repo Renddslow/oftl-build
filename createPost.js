@@ -39,7 +39,7 @@ module.exports = async (srcDir, destDir) => {
   const files = await ls(srcDirPath);
   const postTemplate = await read(path.join(__dirname, './templates/post.ejs'));
 
-  Promise.all(files.map(async (file) => {
+  const posts = await Promise.all(files.map(async (file) => {
     const doc = await read(path.join(srcDirPath, file));
     const { body, attributes } = fm(doc);
 
@@ -72,6 +72,7 @@ module.exports = async (srcDir, destDir) => {
         link: `/authors/${getAuthorSlug(attributes.author)}`,
       },
       date: fmt.format(new Date(attributes.date)),
+      isoDate: new Date(attributes.date).toISOString(),
       title: attributes.title,
       permalink: slugify(attributes.title, {
         replacement: '-',
@@ -94,5 +95,8 @@ module.exports = async (srcDir, destDir) => {
     );
 
     await write(path.join(destDirPath, `${postData.permalink}.html`), pretty(document));
+    return postData;
   }));
+
+  await write(path.join(destDirPath, `posts.json`), JSON.stringify(posts, null, 2));
 };
