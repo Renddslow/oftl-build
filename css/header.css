@@ -38,7 +38,7 @@ a.logo-container {
     grid-template-columns: minmax(0, max-content) minmax(0, 1fr);
     align-items: center;
     grid-column-gap: 4px;
-    color: #fff;
+    color: #fff !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;

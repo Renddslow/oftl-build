@@ -65,6 +65,7 @@ h1.post-title {
     grid-gap: 48px;
     height: 100vh;
     overflow-y: auto;
+    grid-template-rows: minmax(0, max-content) minmax(0, 1fr) minmax(0, max-content);
 }
 
 .post-content a:not(.tag) {
