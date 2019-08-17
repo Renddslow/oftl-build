@@ -4,6 +4,7 @@ const path = require('path');
 const slugify = require('slugify');
 const { hex } = require('wcag-contrast');
 const pretty = require('pretty');
+const sort = require('sort-on');
 
 const stringToHexColor = require('./utils/stringToHexColor');
 const getAuthorSlug = require('./utils/getAuthorSlug');
@@ -24,10 +25,7 @@ const fmt = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
 });
 
-module.exports = async (srcDir, destDir) => {
-  const srcDirPath = path.resolve(process.cwd(), srcDir);
-  const destDirPath = path.resolve(process.cwd(), destDir);
-
+module.exports = async (srcDir, destDir, archiveDir) => {
   if (!srcDir) {
     throw new Error('Source directory path is required');
   }
@@ -35,6 +33,14 @@ module.exports = async (srcDir, destDir) => {
   if (!destDir) {
     throw new Error('Destination directory path is required');
   }
+
+  if (!archiveDir) {
+    throw new Error('Archive destination directory path is required');
+  }
+
+  const srcDirPath = path.resolve(process.cwd(), srcDir);
+  const destDirPath = path.resolve(process.cwd(), destDir);
+  const archiveDirPath = path.resolve(process.cwd(), archiveDir);
 
   const files = await ls(srcDirPath);
   const postTemplate = await read(path.join(__dirname, './templates/post.ejs'));
@@ -98,5 +104,20 @@ module.exports = async (srcDir, destDir) => {
     return postData;
   }));
 
-  await write(path.join(destDirPath, `posts.json`), JSON.stringify(posts, null, 2));
+  const postsSorted = sort(posts, '-isoDate');
+
+
+  await write(
+    path.join(destDirPath, `posts.json`),
+    JSON.stringify(postsSorted, null, 2),
+  );
+
+  const archiveTemplate = await read(path.join(__dirname, './templates/archive.ejs'));
+  const document = await generateTemplate(
+    { posts: postsSorted.slice(0, 12) },
+    archiveTemplate,
+    { title: 'Archives' },
+  );
+
+  await write(archiveDirPath, document);
 };
