@@ -5,7 +5,9 @@ const DYN_CACHE = 'otfl_cache_v1';
     e.respondWith(
       fetch(e.request)
         .then((res) => caches.open(DYN_CACHE).then((cache) => {
-          cache.put(e.request.url, res.clone());
+          if (e.request.url.includes('http')) {
+            cache.put(e.request.url, res.clone());
+          }
           return res;
         }))
         .catch(() => cache.match(e.request))
