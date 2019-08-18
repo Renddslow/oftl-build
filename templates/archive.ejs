@@ -9,7 +9,7 @@
                 <div class="archive-post-header">
                     by <strong><a href="<%= posts[i].author.link %>"><%= posts[i].author.name %></a></strong> on <strong><%= posts[i].date %></strong>
                 </div>
-                <h2><%= posts[i].title %></h2>
+                <h2><a href="/posts/<%= posts[i].permalink %>"><%= posts[i].title %></a></h2>
                 <div class="tag-row">
                     <% for (let j in posts[i].tags) { %>
                     <a href="<%= posts[i].tags[j].link %>" style="background: <%= posts[i].tags[j].bg %>; color: <%= posts[i].tags[j].color %>; border-color: <%= posts[i].tags[j].bg %>" class="tag">

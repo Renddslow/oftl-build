@@ -22,6 +22,10 @@
     margin: 0;
 }
 
+.archive-post h2 a {
+    color: #262626;
+}
+
 .archive-post a:not(.tag) {
     color: #279af1;
     text-decoration: none;
