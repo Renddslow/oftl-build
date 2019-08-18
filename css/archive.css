@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+.archive h1 {
+    margin-bottom: 24px;
+}
+
 .archive-post-container {
     min-height: 80vh;
     display: grid;
