@@ -1,3 +1,12 @@
+.archive {
+    padding: 48px;
+    box-sizing: border-box;
+}
+
+.archive-post-container {
+    min-height: 80vh;
+}
+
 .archive-post {
     width: 100%;
     padding: 14px;
@@ -31,4 +40,10 @@
 
 .archive-post-header {
     font-size: 12px;
+}
+
+.archive-header {
+    padding: 27px;
+    position: relative;
+    background: #262626;
 }
