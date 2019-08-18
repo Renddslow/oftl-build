@@ -57,7 +57,7 @@ module.exports = async (srcDir, destDir, archiveDir) => {
     const postData = {
       category: {
         label: attributes.category,
-        link: `/${categorySlug}`,
+        link: `/archive?c=${categorySlug}`,
       },
       tags: attributes.tags ? attributes.tags.split(',').map((t) => {
         const label = t.trim();

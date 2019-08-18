@@ -6,8 +6,11 @@
         <div class="archive-post-container">
             <% for (let i in posts) { %>
             <div class="archive-post">
+                <div class="archive-post-image-container">
+                    <img src="<%= posts[i].image %>" alt="<%= posts[i].imageAlt %>" />
+                </div>
                 <div class="archive-post-header">
-                    by <strong><a href="<%= posts[i].author.link %>"><%= posts[i].author.name %></a></strong> on <strong><%= posts[i].date %></strong>
+                    <a href="<%= posts[i].category.link %>"><%= posts[i].category.label %></a>
                 </div>
                 <h2><a href="/posts/<%= posts[i].permalink %>"><%= posts[i].title %></a></h2>
                 <div class="tag-row">
@@ -16,6 +19,9 @@
                         <%= posts[i].tags[j].label %>
                     </a>
                     <% } %>
+                </div>
+                <div class="archive-post-footer">
+                    by <a href="<%= posts[i].author.link %>"><%= posts[i].author.name %></a> on <strong><%= posts[i].date %></strong>
                 </div>
             </div>
             <% } %>
