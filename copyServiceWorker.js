@@ -8,6 +8,8 @@ module.exports = async (destDir) => {
     throw new Error('Destination directory path is required');
   }
 
+  const destDirPath = path.resolve(process.cwd(), destDir);
+
   const sw = await read(path.join(__dirname, './templates/sw.js'));
-  await write(path.join(process.cwd(), destDir, 'sw.js'), sw);
+  await write(path.join(destDirPath, 'sw.js'), sw);
 };
