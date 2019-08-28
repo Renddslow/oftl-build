@@ -8,13 +8,13 @@
                 <span>Published in <a href="<%= post.category.link %>"><%= post.category.label %></a></span>
             </div>
         </div>
-        <div class="article-share-bar">
-            <a href="<%= post.social.email %>" aria-label="Send this review to someone via email"><i class="fas fa-envelope"></i></a>
-            <a href="<%= post.social.twitter %>" aria-label="Share this review on Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="<%= post.social.facebook %>" aria-label="Share this review on Facebook"><i class="fab fa-facebook-f"></i></a>
-        </div>
     </header>
     <div class="article-body">
         <%- post.body %>
+    </div>
+    <div class="article-share-bar">
+        <a href="<%= post.social.email %>" aria-label="Send this review to someone via email"><i class="fas fa-envelope"></i></a>
+        <a href="<%= post.social.twitter %>" aria-label="Share this review on Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="<%= post.social.facebook %>" aria-label="Share this review on Facebook"><i class="fab fa-facebook-f"></i></a>
     </div>
 </article>
