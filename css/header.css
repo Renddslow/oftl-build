@@ -1,4 +1,4 @@
-header.header {
+header.site-header {
     width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, max-content);
@@ -15,14 +15,14 @@ header.header {
     align-items: center;
 }
 
-header.header a {
+header.site-header a {
     color: #bfbfbf;
     text-decoration: none;
     outline: none;
 }
 
-header.header a:focus,
-header.header a:hover {
+header.site-header a:focus,
+header.site-header a:hover {
     color: #fff;
 }
 
@@ -68,7 +68,7 @@ a.logo-container:focus .logo-text {
 }
 
 @media screen and (max-width: 640px) {
-    header.header {
+    header.site-header {
         padding: 12px 24px;
     }
 

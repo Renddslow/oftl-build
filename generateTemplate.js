@@ -11,8 +11,6 @@ module.exports = async (data, template, meta) => {
 
   const base = await read(path.join(__dirname, './templates/base.ejs'));
 
-  const templateData = Object.assign({}, data, { header, footer });
-
-  const page = ejs.render(template, templateData);
-  return ejs.render(base, { page, meta });
+  const page = ejs.render(template, data);
+  return ejs.render(base, { page, meta, header, footer });
 };
