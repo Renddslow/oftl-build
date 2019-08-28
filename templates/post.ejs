@@ -4,7 +4,9 @@
         <div class="article-meta">
             <span class="byline">by <a href="<%= post.author.link %>"><%= post.author.name %></a></span>
             <span class="date"><time datetime="<%= post.isoDate %>"><%= post.date %></time></span>
-            <span>Published in <a href="<%= post.category.link %>"><%= post.category.label %></a></span>
+            <div class="article-category">
+                <span>Published in <a href="<%= post.category.link %>"><%= post.category.label %></a></span>
+            </div>
         </div>
         <div class="article-share-bar">
             <a href="<%= post.social.email %>" aria-label="Send this review to someone via email"><i class="fas fa-envelope"></i></a>
