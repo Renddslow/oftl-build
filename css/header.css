@@ -1,7 +1,7 @@
 header.site-header {
     width: 100%;
     display: grid;
-    grid-template-columns: minmax(0,1fr) minmax(0,max-content);
+    grid-template-columns: minmax(0,max-content) minmax(0,max-content);
     position: relative;
     padding: 12px 48px;
     box-sizing: border-box;
@@ -15,6 +15,7 @@ header.site-header {
     border-bottom: 1px solid #e8e8e8;
     background: #fff;
     margin-bottom: 24px;
+    justify-content: space-between;
 }
 
 header.site-header a {
@@ -48,6 +49,7 @@ a.logo-container {
     overflow: hidden;
     cursor: pointer;
     outline: none;
+    padding-left: 0;
 }
 
 a.logo-container:hover .logo-text,
