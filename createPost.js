@@ -85,11 +85,8 @@ module.exports = async (srcDir, destDir, archiveDir) => {
         remove: /[*+~.()'"!:@]/g,
         lower: true,
       }),
-      image: attributes.image,
-      imageAlt: attributes.imageAlt,
       body: marked(body),
       social: {},
-      readLength: '',
     };
 
     const document = await generateTemplate(
