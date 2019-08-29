@@ -36,7 +36,7 @@ nav.navigation {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, max-content));
-    grid-gap: 16px;
+    grid-gap: 8px;
 }
 
 a.logo-container {
@@ -49,7 +49,7 @@ a.logo-container {
     overflow: hidden;
     cursor: pointer;
     outline: none;
-    padding-left: 0;
+    padding-left: 0 !important;
 }
 
 a.logo-container:hover .logo-text,
