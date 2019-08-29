@@ -61,6 +61,12 @@ article .article-body {
     font-family: Georgia, Times, Times New Roman, serif;
     line-height: 1.7;
     color: var(--body-color);
+    width: 90%;
+    margin: 0 auto;
+}
+
+article .article-body p {
+    margin-bottom: 48px;
 }
 
 article .article-share-bar {
@@ -88,4 +94,11 @@ article .article-share-bar a {
     align-items: center;
     justify-content: center;
     padding: 0;
+}
+
+@media screen and (max-width: 960px) {
+    article .article-body {
+        font-size: 18px;
+        width: 100%;
+    }
 }
