@@ -1,0 +1,18 @@
+.bibliography ol {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    max-width: 960px;
+    margin: 0 auto;
+    list-style: none;
+    font-size: 24px;
+    font-family: Georgia, Times, Times New Roman, serif;
+    line-height: 1.7;
+}
+
+@media screen and (max-width: 960px) {
+    .bibliography ol {
+        font-size: 18px;
+        width: 100%;
+    }
+}

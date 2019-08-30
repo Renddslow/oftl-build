@@ -1,13 +1,13 @@
-<div>
-    <ol id="bibliography">
+<div class="bibliography">
+    <ol>
         <% for (let i  in books) { %>
         <% const book = books[i] %>
         <li>
-            <div>
+            <p>
                 <span><%= book.author %>.</span>
                 <cite><%= book.title %>.</cite>
-                <span><%= book.city %>: <%= book.publisher %>, <time datetime="<%= book.year %>"><%= book.year %>.</time></span>
-            </div>
+                <span><%= book.city %>: <wbr><%= book.publisher %>, <wbr><time datetime="<%= book.year %>"><%= book.year %>.</time></span>
+            </p>
             <dfn>This is where I annotate this entry</dfn>
             <div class="link-bin">
                 <a href="https://amazon.com">
