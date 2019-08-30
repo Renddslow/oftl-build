@@ -1,15 +1,22 @@
-<header>
-    <h1>Archive</h1>
-</header>
-<% for (let i in posts) { %>
-    <% const post = posts[i] %>
-    <article id="<%= post.permalink %>">
-        <header class="archive-post-header">
-            <h2><a href="/<%= post.permalink %>" rel="bookmark"><%= post.title %></a></h2>
-            <div class="article-meta">
-                <span class="byline">by <a href="<%= post.author.link %>"><%= post.author.name %></a></span>
-                <span class="date"><time datetime="<%= post.isoDate %>"><%= post.date %></time></span>
-            </div>
+<div class="archive-grid">
+    <div class="archive-list">
+        <header>
+            <h1>Archive</h1>
         </header>
-    </article>
-<% } %>
+        <% for (let i in posts) { %>
+        <% const post = posts[i] %>
+        <article id="<%= post.permalink %>" class="list">
+            <header class="archive-post-header">
+                <h2><a href="/<%= post.permalink %>" rel="bookmark"><%= post.title %></a></h2>
+                <div class="article-meta">
+                    <span class="byline">by <a href="<%= post.author.link %>"><%= post.author.name %></a></span>
+                    <span class="date"><time datetime="<%= post.isoDate %>"><%= post.date %></time></span>
+                </div>
+            </header>
+        </article>
+        <% } %>
+    </div>
+    <aside>
+
+    </aside>
+</div>
