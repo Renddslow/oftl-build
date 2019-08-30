@@ -19,7 +19,7 @@ module.exports = async (srcPath, destDir) => {
   const destDirPath = path.resolve(process.cwd(), destDir);
 
   const booksRaw = await read(srcPathFull);
-  const books = sort(JSON.parse(booksRaw), 'author');
+  const books = sort(JSON.parse(booksRaw), ['author', 'title']);
 
   const bibliographyTemplate = await read(path.join(__dirname, './templates/bibliography.ejs'));
 
