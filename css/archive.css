@@ -11,6 +11,7 @@ article.list .article-meta {
     text-align: left;
 }
 
-article.list .article-meta > * {
+article.list .article-meta .date,
+article.list .article-meta .byline {
     font-size: 14px;
 }
