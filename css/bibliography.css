@@ -22,6 +22,10 @@
     line-height: 1.7;
 }
 
+.bibliography ol li {
+    margin-bottom: 36px;
+}
+
 .bibliography dfn {
     font-size: 18px;
     font-style: normal;
