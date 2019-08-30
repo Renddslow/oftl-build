@@ -1,10 +1,10 @@
 footer {
     width: 100%;
     margin-top: 24px;
-    padding-top: 48px;
+    padding: 48px 0;
     box-sizing: border-box;
     border-top: 1px solid #dfdfdf;
     font-size: 12px;
-    color: #262626;
+    color: var(--body-color);
     text-align: center;
 }

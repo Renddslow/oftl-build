@@ -1,0 +1,53 @@
+<div>
+    <form method="get">
+        <input type="text" placeholder="Search by title, author, or topic" aria-label="Search Books" id="biblio-search" />
+    </form>
+    <dl id="bibliography">
+        <dt>
+            <div>
+                <span>Richter, Sandra L.</span>
+                <span><em>The Epic of Eden</em>.</span>
+                <span>Grand Rapids: Eerdmans, 2019.</span>
+            </div>
+            <comment>This is where I annotate this entry</comment>
+            <div class="link-bin">
+                <a href="https://amazon.com" aria-label="Purchase on Amazon"></a>
+            </div>
+        </dt>
+    </dl>
+</div>
+
+<script>
+    const data = <%= books %>;
+
+    document.getElementById('biblio-search').addEventListener('keyup', (e) => {
+      const searchValue = e.target.value.trim();
+      const searchableKeys = ['author', 'title', 'topic'];
+
+      const entriesWithMatch = data
+        .filter((d) => searchableKeys.some((k) => d[k].includes(searchValue)));
+
+      if (!entriesWithMatch.length) {
+        document.getElementById('bibliography').innerHTML = '';
+        return;
+      }
+
+      entriesWithMatch.forEach((m) => {
+
+      });
+    });
+</script>
+
+<script type="text/template" id="entry-template">
+    <dt>
+        <div>
+            <span>Richter, Sandra L.</span>
+            <span><em>The Epic of Eden</em>.</span>
+            <span>Grand Rapids: Eerdmans, 2019.</span>
+        </div>
+        <comment>This is where I annotate this entry</comment>
+        <div class="link-bin">
+            <a href="https://amazon.com" aria-label="Purchase on Amazon"></a>
+        </div>
+    </dt>
+</script>

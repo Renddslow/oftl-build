@@ -1,32 +1,15 @@
-<div class="archive-container">
-    <div class="archive-header">
-        <%- header %>
-    </div>
-    <div class="archive">
-        <h1>Archive</h1>
-        <div class="archive-post-container">
-            <% for (let i in posts) { %>
-            <div class="archive-post">
-                <div class="archive-post-image-container">
-                    <img src="<%= posts[i].image %>" alt="<%= posts[i].imageAlt %>" />
-                </div>
-                <div class="archive-post-header">
-                    <a href="<%= posts[i].category.link %>"><%= posts[i].category.label %></a>
-                </div>
-                <h2><a href="/posts/<%= posts[i].permalink %>"><%= posts[i].title %></a></h2>
-                <div class="tag-row">
-                    <% for (let j in posts[i].tags) { %>
-                    <a href="<%= posts[i].tags[j].link %>" style="background: <%= posts[i].tags[j].bg %>; color: <%= posts[i].tags[j].color %>; border-color: <%= posts[i].tags[j].bg %>" class="tag">
-                        <%= posts[i].tags[j].label %>
-                    </a>
-                    <% } %>
-                </div>
-                <div class="archive-post-footer">
-                    by <a href="<%= posts[i].author.link %>"><%= posts[i].author.name %></a> on <strong><%= posts[i].date %></strong>
-                </div>
+<header>
+    <h1>Archive</h1>
+</header>
+<% for (let i in posts) { %>
+    <% const post = posts[i] %>
+    <article id="<%= post.permalink %>">
+        <header class="archive-post-header">
+            <h2><a href="/<%= post.permalink %>" rel="bookmark"><%= post.title %></a></h2>
+            <div class="article-meta">
+                <span class="byline">by <a href="<%= post.author.link %>"><%= post.author.name %></a></span>
+                <span class="date"><time datetime="<%= post.isoDate %>"><%= post.date %></time></span>
             </div>
-            <% } %>
-        </div>
-        <%- footer %>
-    </div>
-</div>
+        </header>
+    </article>
+<% } %>

@@ -15,7 +15,7 @@ article header {
 article header h1 {
     font-size: 36px;
     width: 100%;
-    color: #26263f;
+    color: var(--body-color);
     display: block;
     font-weight: 900;
     text-align: center;
@@ -27,6 +27,7 @@ article header h1 {
 article header .article-meta {
     text-align: center;
     width: 100%;
+    color: var(--body-color);
 }
 
 article header .article-meta .byline,
