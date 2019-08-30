@@ -10,9 +10,44 @@
     line-height: 1.7;
 }
 
+.bibliography dfn {
+    font-size: 18px;
+    font-style: normal;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-left: 3px solid #d9d9d9;
+    display: block;
+    line-height: 1.2;
+    margin: 8px 0 8px 48px;
+}
+
+.bibliography a {
+    color: var(--link-color);
+    text-decoration: none;
+    padding: 4px;
+    margin-left: -4px;
+    margin-right: -4px;
+    border-radius: 4px;
+    outline: none;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+}
+
+.bibliography a:hover,
+.bibliography a:focus {
+    background:var(--link-hover-bg);
+    color: var(--link-hover-color);
+}
+
 @media screen and (max-width: 960px) {
     .bibliography ol {
         font-size: 18px;
         width: 100%;
+    }
+
+    .bibliography dfn {
+        font-size: 16px;
+        margin: 8px 0 8px 24px;
     }
 }

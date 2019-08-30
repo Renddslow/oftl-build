@@ -8,9 +8,11 @@
                 <cite><%= book.title %>.</cite>
                 <span><%= book.city %>: <wbr><%= book.publisher %>, <wbr><time datetime="<%= book.year %>"><%= book.year %>.</time></span>
             </p>
-            <dfn>This is where I annotate this entry</dfn>
+            <% if (book.annotation) { %>
+                <dfn><%= book.annotation %>/dfn>
+            <% } %>
             <div class="link-bin">
-                <a href="https://amazon.com">
+                <a href="<%= book.links.amazon %>">
                     Buy on Amazon
                 </a>
             </div>
