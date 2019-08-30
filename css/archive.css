@@ -1,21 +1,3 @@
-article.list {
-    margin-bottom: 24px;
-}
-
-article.list header h2 {
-    width: max-content;
-}
-
-article.list .article-meta {
-    width: max-content;
-    text-align: left;
-}
-
-article.list .article-meta .date,
-article.list .article-meta .byline {
-    font-size: 14px;
-}
-
 .archive-grid {
     display: grid;
     max-width: 900px;
@@ -37,4 +19,23 @@ article.list .article-meta .byline {
     border-left: 1px solid #e8e8e8;
     box-sizing: border-box;
     padding-left: 16px;
+}
+
+article.list {
+    margin-bottom: 24px;
+}
+
+article.list header h2 {
+    width: max-content;
+    margin-bottom: 8px;
+}
+
+article.list .article-meta {
+    width: max-content;
+    text-align: left;
+}
+
+article.list .article-meta .date,
+article.list .article-meta .byline {
+    font-size: 14px;
 }

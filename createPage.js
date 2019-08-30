@@ -41,8 +41,6 @@ module.exports = async (srcDir, destDir) => {
         lower: true,
       }),
       title: attributes.title,
-      image: attributes.image,
-      imageAlt: attributes.imageAlt,
       body: marked(body),
     };
 
