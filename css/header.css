@@ -29,7 +29,7 @@ header.site-header a {
 header.site-header a:not(.logo-container):focus,
 header.site-header a:not(.logo-container):hover {
     color: #fff;
-    background: tomato;
+    background: var(--accent-bg);
 }
 
 nav.navigation {
@@ -58,7 +58,7 @@ a.logo-container:focus .logo-text {
 }
 
 .logo-square {
-    background: tomato;
+    background: var(--accent-bg);
     align-items: center;
     justify-content: center;
     width: 30px;
