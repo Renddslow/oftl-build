@@ -1,7 +1,7 @@
 [
   "variables.css",
-  "archive.css",
   "post.css",
+  "archive.css",
   "tag.css",
   "header.css",
   "footer.css"
