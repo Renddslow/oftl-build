@@ -12,6 +12,13 @@
 .archive-grid .archive-list header h1 {
     margin-bottom: 24px;
     font-size: 36px;
+    font-weight: 900;
+    width: 100%;
+    color: var(--body-color);
+    display: block;
+    text-align: center;
+    overflow-wrap: break-word;
+    line-height: 1.166666667;
 }
 
 .archive-grid aside {
