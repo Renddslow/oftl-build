@@ -15,3 +15,26 @@ article.list .article-meta .date,
 article.list .article-meta .byline {
     font-size: 14px;
 }
+
+.archive-grid {
+    display: grid;
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 0 auto;
+    grid-template-columns: minmax(600px, 2fr) minmax(0, 1fr);
+    grid-gap: 16px;
+}
+
+.archive-grid .archive-list header h1 {
+    margin-bottom: 24px;
+    font-size: 36px;
+}
+
+.archive-grid aside {
+    height: 100%;
+    border-left: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    padding-left: 16px;
+}
