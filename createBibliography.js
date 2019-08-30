@@ -1,5 +1,6 @@
 const pretty = require('pretty');
 const sort = require('sort-on');
+const path = require('path');
 
 const read = require('./utils/read');
 const write = require('./utils/write');
