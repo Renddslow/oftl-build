@@ -1,53 +1,20 @@
 <div>
-    <form method="get">
-        <input type="text" placeholder="Search by title, author, or topic" aria-label="Search Books" id="biblio-search" />
-    </form>
-    <dl id="bibliography">
-        <dt>
+    <ol id="bibliography">
+        <% for (let i  in books) { %>
+        <% const book = books[i] %>
+        <li>
             <div>
-                <span>Richter, Sandra L.</span>
-                <span><em>The Epic of Eden</em>.</span>
-                <span>Grand Rapids: Eerdmans, 2019.</span>
+                <span><%= book.author %>.</span>
+                <cite><%= book.title %>.</cite>
+                <span><%= book.city %>: <%= book.publisher %>, <time datetime="<%= book.year %>"><%= book.year %>.</time></span>
             </div>
-            <comment>This is where I annotate this entry</comment>
+            <dfn>This is where I annotate this entry</dfn>
             <div class="link-bin">
-                <a href="https://amazon.com" aria-label="Purchase on Amazon"></a>
+                <a href="https://amazon.com">
+                    Buy on Amazon
+                </a>
             </div>
-        </dt>
-    </dl>
+        </li>
+        <% } %>
+    </ol>
 </div>
-
-<script>
-    const data = <%= books %>;
-
-    document.getElementById('biblio-search').addEventListener('keyup', (e) => {
-      const searchValue = e.target.value.trim();
-      const searchableKeys = ['author', 'title', 'topic'];
-
-      const entriesWithMatch = data
-        .filter((d) => searchableKeys.some((k) => d[k].includes(searchValue)));
-
-      if (!entriesWithMatch.length) {
-        document.getElementById('bibliography').innerHTML = '';
-        return;
-      }
-
-      entriesWithMatch.forEach((m) => {
-
-      });
-    });
-</script>
-
-<script type="text/template" id="entry-template">
-    <dt>
-        <div>
-            <span>Richter, Sandra L.</span>
-            <span><em>The Epic of Eden</em>.</span>
-            <span>Grand Rapids: Eerdmans, 2019.</span>
-        </div>
-        <comment>This is where I annotate this entry</comment>
-        <div class="link-bin">
-            <a href="https://amazon.com" aria-label="Purchase on Amazon"></a>
-        </div>
-    </dt>
-</script>
