@@ -33,8 +33,9 @@ article.list {
 }
 
 article.list header h2 {
-    width: max-content;
     margin-bottom: 8px;
+    width: 100%;
+    max-width: max-content;
 }
 
 article.list .article-meta {
