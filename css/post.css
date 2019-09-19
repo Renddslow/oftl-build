@@ -98,6 +98,7 @@ article .article-body blockquote::after {
 
 article .article-body blockquote p {
     text-indent: 0 !important;
+    margin-bottom: 12px;
 }
 
 article .article-body blockquote p:last-child {
