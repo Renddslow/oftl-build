@@ -24,7 +24,7 @@ module.exports = async (srcPath, destDir) => {
     .map((book) => Object.assign(
       {},
       book,
-      { id: slugify(book.title, { remove: /[*+~.()'"!:@]/g }),
+      { id: slugify(book.title, { remove: /[*+~.()'"!:@,]/g, lower: true }),
     }));
 
   const bibliographyTemplate = await read(path.join(__dirname, './templates/bibliography.ejs'));
