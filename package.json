@@ -5,6 +5,7 @@
   "author": "Matt McElwee <mmcelwee@dmsi.com>",
   "license": "MIT",
   "dependencies": {
+    "cuid": "^2.1.6",
     "ejs": "^2.6.2",
     "front-matter": "^3.0.2",
     "lieutenant": "^1.1.0",

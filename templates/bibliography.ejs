@@ -3,14 +3,14 @@
     <ol>
         <% for (let i  in books) { %>
         <% const book = books[i] %>
-        <li>
+        <li id="<%= book.id %>">
             <p>
-                <span><%= book.author %>.</span>
+                <span><%= book.author %><% if (book.author[book.author.length - 1] !== '.') { %>.<% } %></span>
                 <cite><%= book.title %>.</cite>
                 <span><%= book.city %>: <wbr><%= book.publisher %>, <wbr><time datetime="<%= book.year %>"><%= book.year %>.</time></span>
             </p>
             <% if (book.annotation) { %>
-                <dfn><%= book.annotation %>/dfn>
+                <dfn><%= book.annotation %></dfn>
             <% } %>
             <div class="link-bin">
                 <a href="<%= book.links.amazon %>">

@@ -1,6 +1,7 @@
 const pretty = require('pretty');
 const sort = require('sort-on');
 const path = require('path');
+const slugify = require('slugify');
 
 const read = require('./utils/read');
 const write = require('./utils/write');
@@ -19,7 +20,12 @@ module.exports = async (srcPath, destDir) => {
   const destDirPath = path.resolve(process.cwd(), destDir);
 
   const booksRaw = await read(srcPathFull);
-  const books = sort(JSON.parse(booksRaw), ['author', 'title']);
+  const books = sort(JSON.parse(booksRaw), ['author', 'title'])
+    .map((book) => Object.assign(
+      {},
+      book,
+      { id: slugify(book.title, { remove: /[*+~.()'"!:@]/g }),
+    }));
 
   const bibliographyTemplate = await read(path.join(__dirname, './templates/bibliography.ejs'));
 
