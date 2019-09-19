@@ -68,6 +68,40 @@ article .article-body {
 
 article .article-body p {
     margin-bottom: 48px;
+    text-indent: 24px;
+}
+
+article .article-body blockquote {
+    padding: 24px;
+    box-sizing: border-box;
+    background: #efefef;
+    border-radius: 8px;
+    margin: 12px 0 32px;
+    position: relative;
+}
+
+article .article-body blockquote::after {
+    content: "“";
+    position: absolute;
+    font-size: 48px;
+    background: #fff;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: calc(50% - 24px);
+    color: #efefef;
+    line-height: 1.5;
+}
+
+article .article-body blockquote p {
+    text-indent: 0 !important;
+}
+
+article .article-body blockquote p:last-child {
+    margin: 0;
 }
 
 article .article-share-bar {
