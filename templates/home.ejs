@@ -1,0 +1,34 @@
+<% for (const post of posts.slice(0, 2)) { %>
+    <article class="single-article">
+        <header>
+            <h2><%= post.title %></h2>
+            <div class="article-meta">
+                <span class="byline">by <a href="<%= post.author.link %>"><%= post.author.name %></a></span>
+                <span class="date"><time datetime="<%= post.isoDate %>"><%= post.date %></time></span>
+            </div>
+            <div class="article-body">
+                <%- post.excerpt %>
+            </div>
+        </header>
+    </article>
+<% } %>
+<div class="more-articles">
+    <div class="article-grid">
+        <% for (const post of posts.slice(2)) { %>
+            <article class="more-article">
+                <h3><%= post.title %></h3>
+                <div class="article-more-meta">
+                    <span class="byline">by <a href="<%= post.author.link %>"><%= post.author.name %></a></span>
+                </div>
+                <div class="article-excerpt">
+                    <%- post.excerpt %>
+                </div>
+                <div class="article-category">
+                    <span>Published in <a href="<%= post.category.link %>"><%= post.category.label %></a></span>
+                    <span>•</span>
+                    <span class="date"><time datetime="<%= post.isoDate %>"><%= post.date %></time></span>
+                </div>
+            </article>
+        <% } %>
+    </div>
+</div>

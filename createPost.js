@@ -110,11 +110,21 @@ module.exports = async (srcDir, destDir, archiveDir) => {
   );
 
   const archiveTemplate = await read(path.join(__dirname, './templates/archive.ejs'));
-  const document = await generateTemplate(
-    { posts: postsSorted.slice(0, 12) },
+  const archiveDocument = await generateTemplate(
+    { posts: postsSorted },
     archiveTemplate,
     { title: 'Archives' },
   );
 
-  await write(path.join(archiveDirPath, 'archive.html'), document);
+  const homeTemplate = await read(path.join(__dirname, './templates/home.ejs'));
+  const homeDocument = await generateTemplate(
+    { posts: postsSorted.slice(0, 2) },
+    homeTemplate,
+    { title: '@home' },
+  );
+
+  await Promise.all([
+    write(path.join(archiveDirPath, 'archive.html'), archiveDocument),
+    write(path.join(archiveDirPath, 'index.html'), homeDocument),
+  ]);
 };

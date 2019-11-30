@@ -16,14 +16,14 @@
     width: 100%;
     color: var(--body-color);
     display: block;
-    text-align: center;
+    text-align: left;
     overflow-wrap: break-word;
     line-height: 1.166666667;
 }
 
 .archive-grid aside {
     height: 100%;
-    border-left: 1px solid #e8e8e8;
+    /*border-left: 1px solid #e8e8e8;*/
     box-sizing: border-box;
     padding-left: 16px;
 }
@@ -55,6 +55,6 @@ article.list .article-meta .byline {
 
     .archive-grid aside {
         border-left: 0;
-        border-top: 1px solid #e8e8e8;
+        /*border-top: 1px solid #e8e8e8;*/
     }
 }
