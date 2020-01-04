@@ -49,6 +49,8 @@ module.exports = async (srcDir, destDir, archiveDir) => {
     const doc = await read(path.join(srcDirPath, file));
     const { body, attributes } = fm(doc);
 
+    if (attributes.draft) return;
+
     const categorySlug = slugify(attributes.category, {
       replacement: '-',
       lower: true,
@@ -101,7 +103,7 @@ module.exports = async (srcDir, destDir, archiveDir) => {
     return postData;
   }));
 
-  const postsSorted = sort(posts, '-isoDate');
+  const postsSorted = sort(posts.filter((p) => p), '-isoDate');
 
 
   await write(
