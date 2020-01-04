@@ -5,6 +5,7 @@ const slugify = require('slugify');
 const { hex } = require('wcag-contrast');
 const pretty = require('pretty');
 const sort = require('sort-on');
+const qs = require('qs');
 
 const stringToHexColor = require('./utils/stringToHexColor');
 const getAuthorSlug = require('./utils/getAuthorSlug');
@@ -56,6 +57,12 @@ module.exports = async (srcDir, destDir, archiveDir) => {
       lower: true,
     });
 
+    const permalink = slugify(attributes.title, {
+      replacement: '-',
+      remove: /[*+~.()'"!:@]/g,
+      lower: true,
+    });
+
     const postData = {
       category: {
         label: attributes.category,
@@ -82,13 +89,24 @@ module.exports = async (srcDir, destDir, archiveDir) => {
       date: fmt.format(new Date(attributes.date)),
       isoDate: new Date(attributes.date).toISOString(),
       title: attributes.title,
-      permalink: slugify(attributes.title, {
-        replacement: '-',
-        remove: /[*+~.()'"!:@]/g,
-        lower: true,
-      }),
+      permalink,
       body: marked(body),
-      social: {},
+      social: {
+        twitter: `https://twitter.com/intent/tweet?${qs.stringify({
+          text: `${attributes.title} | On the Formed Life`,
+          url: `https://ontheformed.life/posts/${permalink}`,
+        })}`,
+        facebook: `https://www.facebook.com/dialog/share?${qs.stringify({
+          display: 'popup',
+          href: `https://ontheformed.life/posts/${permalink}`,
+          redirect_uri: `https://ontheformed.life/posts/${permalink}`,
+          app_id: '145634995501895',
+        })}`,
+        email: `mailto:?${qs.stringify({
+          subject: `On the Formed Life: ${attributes.title}`,
+          body: `https://ontheformed.life/posts/${permalink}`,
+        })}`
+      },
     };
 
     const document = await generateTemplate(
