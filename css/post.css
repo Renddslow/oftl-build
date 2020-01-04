@@ -24,6 +24,11 @@ article header h1 {
     line-height: 1.166666667;
 }
 
+article header h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
 article header .article-meta {
     text-align: center;
     width: 100%;
