@@ -1,6 +1,6 @@
 {
   "name": "@otfl/build",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "main": "index.js",
   "author": "Matt McElwee <mmcelwee@dmsi.com>",
   "license": "MIT",
