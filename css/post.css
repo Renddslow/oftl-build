@@ -88,6 +88,10 @@ article .article-body ul {
     margin-bottom: 24px;
 }
 
+article .article-body ul li {
+    white-space: pre-line;
+}
+
 article .article-body blockquote {
     padding: 24px;
     box-sizing: border-box;
